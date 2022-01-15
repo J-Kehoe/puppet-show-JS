@@ -1,4 +1,6 @@
-# Three.js Journey
+# Puppet Show
+
+in-browser puppet show controlled via webcam using ThreeJS and MediaPipe's Hand Model
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
