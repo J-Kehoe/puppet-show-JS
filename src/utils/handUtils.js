@@ -23,7 +23,7 @@ export function setUpHandTracking(myHands) {
     trackCamera.start();
 }
 
-export function getLandmarkProperty(i){
+function getLandmarkProperty(i){
     var palms = [0,1,2,5,9,13,17] //landmark indices that represent the palm
 
     var idx = palms.indexOf(i);
