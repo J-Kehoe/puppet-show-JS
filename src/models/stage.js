@@ -2,12 +2,12 @@ import * as THREE from '../../node_modules/three/src/Three.js';
 
 const loader = new THREE.TextureLoader()
 
-const cubetexture = loader.load("/wood.jpeg")
+const cubetexture = loader.load("/textures/wood.jpeg")
 cubetexture.wrapS = THREE.RepeatWrapping;
 cubetexture.wrapT = THREE.RepeatWrapping;
 cubetexture.repeat.set( 15, 5 );
 
-const curtaintexture = loader.load("/curtain.jpg")
+const curtaintexture = loader.load("/textures/curtain.jpg")
 curtaintexture.wrapS = THREE.RepeatWrapping;
 curtaintexture.wrapT = THREE.RepeatWrapping;
 curtaintexture.repeat.set( 1, 5 );
