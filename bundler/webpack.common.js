@@ -9,7 +9,8 @@ module.exports = {
     {
         hashFunction: 'xxhash64',
         filename: 'bundle.[contenthash].js',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(__dirname, '../dist'),
+        publicPath: argv.mode === 'production' ? '/puppet-show-JS' : '/',
     },
     devtool: 'source-map',
     plugins:
