@@ -40,25 +40,32 @@ function getLandmarkProperty(i){
 function updateHands(handData) {
     if (handData.multiHandLandmarks[0]) {
         if (handData.multiHandLandmarks.length <= hands.children.length) {
-            for (var j = 0; j < handData.multiHandLandmarks.length; j++) {
-                console.log(handData.multiHandLandmarks)
-                console.log(hands)
-                for (var i = 0; i < handData.multiHandLandmarks[j].length; i++){
-                    var {isPalm,next} = getLandmarkProperty(i);
-                
-                    var p0 = webcam2space(handData.multiHandLandmarks[j][i]);  // one end of the bone
-                    var p1 = webcam2space(handData.multiHandLandmarks[j][next]);  // the other end of the bone
-                
-                    // compute the center of the bone (midpoint)
-                    var mid = p0.clone().lerp(p1,0.5);
-                    hands.children[j].children[i].position.set(mid.x,mid.y,mid.z);
-                
-                    // compute the length of the bone
-                    //hand.children[i].scale.y = p0.distanceTo(p1);
-                    //hand.children[i].rotation.x += Math.PI;
-                
-                    // compute orientation of the bone
-                    hands.children[j].children[i].lookAt(p1);
+            for (var j = 0; j < hands.children.length; j++) {
+                if (handData.multiHandLandmarks[j]) {
+                    console.log(handData.multiHandLandmarks)
+                    console.log(hands)
+                    for (var i = 0; i < handData.multiHandLandmarks[j].length; i++){
+                        var {isPalm,next} = getLandmarkProperty(i);
+                    
+                        var p0 = webcam2space(handData.multiHandLandmarks[j][i]);  // one end of the bone
+                        var p1 = webcam2space(handData.multiHandLandmarks[j][next]);  // the other end of the bone
+                    
+                        // compute the center of the bone (midpoint)
+                        var mid = p0.clone().lerp(p1,0.5);
+                        hands.children[j].children[i].position.set(mid.x,mid.y,mid.z);
+                    
+                        // compute the length of the bone
+                        //hand.children[i].scale.y = p0.distanceTo(p1);
+                        //hand.children[i].rotation.x += Math.PI;
+                    
+                        // compute orientation of the bone
+                        hands.children[j].children[i].lookAt(p1);
+                    }
+                }
+                else {
+                    for (var i = 0; i < hands.children[j].children.length; i++){
+                        hands.children[j].children[i].position.set(0,0,10);
+                    }
                 }
             }
         }

@@ -6,9 +6,6 @@ import stage from '../src/models/stage.js'
 import hand from '../src/models/hand.js'
 import { setUpHandTracking } from './utils/handUtils';
 
-
-
-
 /** 
  * Debug
  */
@@ -19,7 +16,17 @@ const gui = new dat.GUI()
  */
 
 const videoElement = document.getElementById('video');
-const NumberOfHands = 2
+//const NumberOfHands = 2;
+const params = {
+    NumberOfHands: 2
+}
+
+gui.add(params,'NumberOfHands', 1, 2, 1).name('number of hands').onChange(function(value) {
+    hands.clear()
+    for (let i = 0; i < params.NumberOfHands; i++) {
+        hands.add(hand.clone())
+    }
+})
 
 /**
  * Base
@@ -38,7 +45,7 @@ scene.add(stage)
 stage.position.set(0, -15, -30)
 
 var hands = new THREE.Object3D()
-for (let i = 0; i < NumberOfHands; i++) {
+for (let i = 0; i < params.NumberOfHands; i++) {
     hands.add(hand.clone())
 }
 
