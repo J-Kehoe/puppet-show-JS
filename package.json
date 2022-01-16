@@ -1,5 +1,5 @@
 {
-    "homepage": "http://j-kehoe.github.io/puppet-show-JS",
+    "homepage": "https://j-kehoe.github.io/puppet-show-JS",
     "name": "puppet-show-JS",
     "repository": "#",
     "license": "UNLICENSED",
@@ -21,7 +21,8 @@
         "file-loader": "^6.2.0",
         "html-loader": "^3.0.0",
         "html-webpack-plugin": "^5.5.0",
-        "mini-css-extract-plugin": "^2.4.3",
+        "internal-ip": "~6.2.0",
+        "mini-css-extract-plugin": "~2.4.3",
         "portfinder-sync": "0.0.2",
         "raw-loader": "^4.0.2",
         "style-loader": "^3.3.1",
