@@ -18,7 +18,7 @@ const gui = new dat.GUI()
 const videoElement = document.getElementById('video');
 //const NumberOfHands = 2;
 const params = {
-    NumberOfHands: 2
+    NumberOfHands: 1
 }
 
 gui.add(params,'NumberOfHands', 1, 2, 1).name('number of hands').onChange(function(value) {
