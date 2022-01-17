@@ -8,7 +8,7 @@ module.exports = merge(
         mode: 'production',
         output:
         {
-            publicPath: '/puppet-show-JS'
+            publicPath: '/puppet-show-JS/'
         },
         plugins:
         [
