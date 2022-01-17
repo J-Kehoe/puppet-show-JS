@@ -6,10 +6,6 @@ module.exports = merge(
     commonConfiguration,
     {
         mode: 'production',
-        output:
-        {
-            publicPath: '/puppet-show-JS/'
-        },
         plugins:
         [
             new CleanWebpackPlugin()
